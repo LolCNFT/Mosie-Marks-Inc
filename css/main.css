@@ -171,7 +171,7 @@ html, body { overflow-x: hidden; background-image:
   }
   
   .nav-item {
-    padding: 0 30px;
+    padding: 0 50px;
   }
   .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
     color:  #fff239;
@@ -190,6 +190,29 @@ html, body { overflow-x: hidden; background-image:
     top: 0px;
     z-index: 10000;
   }
+  /*-----------------------------------------------------------
+  9. check later
+------------------------------------------------------------*/
+.eyes{
+  position: absolute;
+  top: 50px;
+  animation: blink2 10s infinite ;
+  animation-name: blink1, blink2;
+  animation-duration: 2s, 50s;
+  opacity: 0;
+}
+@keyframes blink2 {
+  0%{opacity: 0;}
+  30%{opacity: 0;}
+  50%{opacity: 1; }
+  70%{opacity: 0;}
+  100%{opacity: 0;}
+}
+@keyframes blink1 { to { visibility: hidden; } } 
+@-webkit-keyframes blink1{to { visibility: hidden; }} 
+.blink { animation: blink1 2s steps(50, start) infinite alternate; 
+    animation-delay: 1000s;
+   -webkit-animation: blink1 2s steps(50, start) infinite alternate; }
   /*-----------------------------------------------------------
   9. Wallet Connect/Buttons
 ------------------------------------------------------------*/
@@ -212,14 +235,21 @@ button {
 
     }
   }
+  @media (min-width: 992px){
+.navbar-expand-lg .navbar-collapse {
+    display: -ms-flexbox!important;
+    display: flex!important;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+    justify-content: space-between;
+}
+  }
   @media (max-width: 992px){
     .container-nav{
       max-width: 100%;
 
     }
-    .navbar-expand{
-   
-    }
+
   }
   @media (max-width: 768px){
     .container-nav{
@@ -239,18 +269,14 @@ button {
       .navbar-brand{
         margin-left: 0rem;
       }
-      .navbar-toggler {
-       padding: 0.5rem -1.2rem 0.25rem 0rem !important;
-     }
+
     }
   @media (max-width: 1199px) {
     .nav-item {
       padding: 0px; 
 
     }
-    .navbar-light .navbar-nav .nav-link {
-      font-size: 1rem;
-    }
+
   }
   @media (max-width: 991px) {
     .navbar {
