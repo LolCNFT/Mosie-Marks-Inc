@@ -126,24 +126,25 @@ const cursorDefaultStyle = `
     width: 28px;
     height: 28px;
     border-radius: 9999px;
-    border: 2px solid #FF0080;
+    border: 2px solid #e100ff00;
     position: fixed;
     transform: translate(-50%, -50%);
     top: 0; left: '0';
     transition: 150ms;
     pointer-events: none;
+
 `
 
 const childDefaultStyle = `
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #FF0080;
-    position: fixed;
-    top: 0; left: '0';
-    transform: translate(-50%, -50%);
-    transition: 100ms;
-    pointer-events: none;
+    // width: 8px;
+    // height: 8px;
+    // border-radius: 50%;
+    // background-color: #FF0080;
+    // position: fixed;
+    // top: 0; left: '0';
+    // transform: translate(-50%, -50%);
+    // transition: 100ms;
+    // pointer-events: none;
 `
 
 cursor.style.cssText = cursorDefaultStyle
@@ -340,15 +341,15 @@ const touchSlide = (() => {
         sliderWidth = slider.clientWidth/trail.length
     })
     
-    // Do this on touchDrag on screen
-    slider.addEventListener("touchmove", (e) => {
-        // prevent default function
-        e.preventDefault()
-        // get the touche position of X on the screen when dragging stops
-        move = e.touches[0].clientX
-        // Subtract initial position from end position and save to change variabla
-        change = start - move
-    })
+    // // Do this on touchDrag on screen
+    // slider.addEventListener("touchmove", (e) => {
+    //     // prevent default function
+    //     e.preventDefault()
+    //     // get the touche position of X on the screen when dragging stops
+    //     move = e.touches[0].clientX
+    //     // Subtract initial position from end position and save to change variabla
+    //     change = start - move
+    // }) //ERROR HERE NOT LETTING SCROLL UP
 
     const mobile = (e) => {
         // if change is greater than a quarter of sliderWidth, next else Do NOTHING
@@ -361,3 +362,6 @@ const touchSlide = (() => {
     // call mobile on touch end
     slider.addEventListener("touchend", mobile)
 })()
+
+//Team
+ 
