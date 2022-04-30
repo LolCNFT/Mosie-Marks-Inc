@@ -64,19 +64,33 @@
   
   //sticky menu
   
-  const nav = document.querySelector('#navbar');
-  let navTop = nav.offsetTop;
+  // const nav = document.querySelector('#navbar');
+  // let navTop = nav.offsetTop;
+  // const navbar = getElementById('#nav-bk');
+  // function fixedNav() {
+  //   if (window.scrollY >= navTop) {    
+  //     nav.classList.add('fixed');
+  //     navbar.classList.add('navbar-bk');
+  //   } else {
+  //     nav.classList.remove('fixed');
+  //     navbar.classList.remove('navbar-bk');
+  //   }
+  // }
   
-  function fixedNav() {
-    if (window.scrollY >= navTop) {    
-      nav.classList.add('fixed');
-    } else {
-      nav.classList.remove('fixed');    
-    }
+  // window.addEventListener('scroll', fixedNav);
+  if (document.body.scrollTop >= 280 || document.documentElement.scrollTop >= 280) {
   }
-  
-  window.addEventListener('scroll', fixedNav);
-  
+  var myNav = document.getElementById("nav");
+
+  // window.onscroll = function() {
+  //   "use strict";
+  //   if (document.body.scrollTop >= 280 || document.documentElement.scrollTop >= 280) {
+  //     myNav.classList.add("scroll");
+  //     myNav.classList.remove("navbar");
+  //   } else {
+  //     myNav.classList.remove("scroll");
+  //   }
+  // };
   //Get the button:
   mybutton = document.getElementById("myBtn");
   
@@ -84,10 +98,12 @@
   window.onscroll = function() {scrollFunction()};
   
   function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
       mybutton.style.display = "block";
+      myNav.classList.add("scroll");
     } else {
       mybutton.style.display = "none";
+      myNav.classList.remove("scroll");
     }
   }
   

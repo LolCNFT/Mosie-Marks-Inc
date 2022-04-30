@@ -153,7 +153,7 @@ html, body { overflow-x: hidden; background-image:
     border-radius: .25rem;
   }
   .navbar-light .navbar-nav .nav-link {
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: 1.7rem;
     font-family: 'bad-ink';
   }
@@ -162,7 +162,7 @@ html, body { overflow-x: hidden; background-image:
     box-shadow: 5px 2px 10px #8000ff;
   }
   .navbar-light .navbar-nav .nav-link:visited {
-    color: #ffffff ;
+    color: #ffffff;
   }
   .navbar-light .navbar-nav .nav-link:active, .navbar-nav .dropdown-menu a:active{
     transform: scale(0.9);
@@ -173,7 +173,7 @@ html, body { overflow-x: hidden; background-image:
 
   .navbar {
     padding: 2.5rem 1rem;
-    background-color: #080808ea;
+    background-color: #00000000;
 
   }
   .navbar-light .navbar-brand {
@@ -188,19 +188,25 @@ html, body { overflow-x: hidden; background-image:
     padding: .5rem;
     border-radius: 10%;
   }
-  #navbar{
-    background-color: #00000000;
-    background: #00000000;
+  #navbar2{
     width: 100%;
+    position: fixed;
+    z-index: 10;
+
   }
   .navbar img{
     position: relative;
     left: 15px;
   }
-  #navbar.fixed {
+ /* #navbar.fixed {
     position: fixed;
     top: 0px;
     z-index: 10000;
+  } */
+
+  .scroll {
+    background-color: #0000009d;
+    transition: 1s;
   }
   /*-----------------------------------------------------------
     4. First Section
@@ -213,6 +219,9 @@ html, body { overflow-x: hidden; background-image:
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  top: -100px;
+  z-index: 1;
 }
 .main .content{
   width: 50%;
@@ -639,6 +648,7 @@ button {
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
     justify-content: space-between;
+    
 }
   }
   @media (max-width: 992px){
@@ -679,6 +689,7 @@ button {
     .navbar {
       margin-top: -10px;
       z-index: 1000;
+      background-color: #0000009d;
     }
     .navbar-collapse {
       text-align: center;
