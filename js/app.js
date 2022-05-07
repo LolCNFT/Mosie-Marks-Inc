@@ -5,14 +5,14 @@ const Buffer = B.Buffer
 let walletclient
 
 window.onload = function() {
-  const wallets = ["nami", "eternl"]
+  const wallets = ["nami", "eternl"];
   for (const wallet of wallets) {
     if (window.cardano[wallet]?.isEnabled()) {
-      console.log(`${wallet} wallet is enabled`)
+      console.log(`${wallet} wallet is enabled`);
     } else {
-      console.log(`${wallet} wallet is not enabled`)
-    }
-  }
+      console.log(`${wallet} wallet is not enabled`);
+    };
+  };
 };
 
 window.connectNami = async () => {
