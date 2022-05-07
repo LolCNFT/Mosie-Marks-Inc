@@ -194,7 +194,7 @@ html, body { overflow-x: hidden;
   #navbar2{
     width: 100%;
     position: fixed;
-    z-index: 10;
+    z-index: 10000000;
 
   }
   .navbar img{
@@ -603,9 +603,32 @@ html, body { overflow-x: hidden;
   flex-direction: column;
   align-items: center;
 }
+.moving-image{
+  position: relative ;
+  z-index: 1;
+  left: -900px;
+  bottom: -450px;
+  animation: fish 60s linear infinite;
+}
+@keyframes fish {
+  0% {
+    transform: translate(-1000px,-50px) rotatez(0deg);
+    -moz-transform: translate(-1000px,-50px) rotatez(0deg);
+    -ms-transform: translate(-1000px,-50px) rotatez(0deg);
+    -o-transform: translate(-1000px,-50px) rotatez(0deg);
+  }
+  100% {
+    transform: translate(4000px,-150px) rotatez(0deg);
+    -moz-transform: translate(4000px,-150px) rotatez(0deg);
+    -ms-transform: translate(4000px,-150px) rotatez(0deg);
+    -o-transform: translate(4000px,-150px) rotatez(0deg);
+  }
+    
+}
 .team{
 
   padding: 2rem;
+  margin-top: -8rem;
   background-color: #00000000;
   border-radius: 10%;
   display: grid; 
@@ -656,6 +679,7 @@ html, body { overflow-x: hidden;
   from(#ff00d4),
   to(#6100c2),
   color-stop(.6,#0c93b4));
+  z-index: 2;
 }
 .card:hover{
   transform: scale(1.1);
@@ -702,10 +726,17 @@ html, body { overflow-x: hidden;
 .social-team:hover{
   transform: scale(1.2);
   color: yellow;
+  cursor: var(--cursor-f);
 }
 
 .team-button:hover {
-  opacity: 0.7;
+  color: black;
+  background-image: -webkit-gradient(linear,
+  30% 0%,
+  75% 84%,
+  from(rgb(255, 255, 255)),
+  to(#e0e0e0),
+  color-stop(.6,#f5f5f5));
 }
 /*-----------------------------------------------------------
   9. check later
@@ -774,6 +805,18 @@ button {
   @media (max-width: 768px){
     .container-nav{
       max-width: 100%;
+    }
+    .team{
+      display: grid; 
+      grid-auto-columns: 1fr; 
+      grid-template-columns: 1fr; 
+      grid-template-rows: 0.25fr 1fr 1fr 1fr; 
+      gap: 50px 10px; 
+      grid-template-areas: 
+        "a1"
+        "a2"
+        "a3"
+        "a4"; 
     }
   }
   @media (max-width: 576px){
@@ -879,4 +922,101 @@ button {
 									   to(#7F00FF),
 									   color-stop(.6,#00ccff));
                      
+}
+/*-----------------------------------------------------------
+  8. To-top
+-------------------------------------------------------------*/
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 10px; /* Place the button 30px from the right */
+  z-index: 9999; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #000000; /* Set a background color */
+  color: white; /* Text color */
+  cursor: var(--cursor-f); /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+  background-image: url(/img/favicons/apple-touch-icon-120x120.png);
+  background-repeat: no-repeat;
+  background-size: 3rem;
+  background-position: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  transition: 1s all;
+}
+#myBtn:hover {
+  background-color: #faea05; /* Add a dark-grey background on hover */
+}
+/*-----------------------------------------------------------
+  8. Footer
+-------------------------------------------------------------*/
+footer {
+  background-color: #000000;
+  background-image: url(/img/Tworld.png);
+  background-size: cover;
+  width: 100%;
+  min-height: 200px;
+  text-align: center;
+  padding: 0px 0px 0px 0px;
+}
+footer h5{
+  color: #fff;
+  padding-bottom: 10px;
+}
+footer h3{
+  color: #72f572;
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+footer h6 {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.social-foot{
+  margin-bottom: -1rem;
+  margin-top: 2rem;
+}
+.social-foot li {
+  display: inline;
+}
+.social-foot li a {
+  font-size: 2.7rem;
+  color: #fff;
+  margin: 0px 30px;
+
+}
+.social-foot li a:hover {
+  color: #00acee;
+  transition: all 0.3s ease;
+}
+.fa-discord:hover{
+  color: rgb(88 101 242);
+}
+.text-foot{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+    /*-----------------------------------------------------------
+  15. Signature
+-------------------------------------------------------------*/
+.lol{color:rgb(234, 130, 238);}.lol:hover{size:1rem;color:#ff0 !important;}.lol:visited{color:violet;}.hero2{line-height:1;display:inline-block;z-index:2;letter-spacing:4px;filter:drop-shadow(0 1px 3px)}.layers{position:relative}.layers::after,.layers::before{content:attr(data-text);position:absolute;width:110%;z-index:-1}.layers::before{top:10px;left:15px;color:#e0287d}.layers::after{top:5px;left:-10px;color:#1bc7fb}.glitch span{animation:paths 5s step-end infinite}.glitch::before{animation:paths 5s step-end infinite,opacity 5s step-end infinite,font 8s step-end infinite,movement 10s step-end infinite}.glitch::after{animation:paths 5s step-end infinite,opacity 5s step-end infinite,font 7s step-end infinite,movement 8s step-end infinite}.single-path{clip-path:polygon(0% 12%,53% 12%,53% 26%,25% 26%,25% 86%,31% 86%,31% 0%,53% 0%,53% 84%,92% 84%,92% 82%,70% 82%,70% 29%,78% 29%,78% 65%,69% 65%,69% 66%,77% 66%,77% 45%,85% 45%,85% 26%,97% 26%,97% 28%,84% 28%,84% 34%,54% 34%,54% 89%,30% 89%,30% 58%,83% 58%,83% 5%,68% 5%,68% 36%,62% 36%,62% 1%,12% 1%,12% 34%,60% 34%,60% 57%,98% 57%,98% 83%,1% 83%,1% 53%,91% 53%,91% 84%,8% 84%,8% 83%,4% 83%)}.paths{animation:paths 5s step-end infinite}@keyframes paths{0%{clip-path:polygon(0% 43%,83% 43%,83% 22%,23% 22%,23% 24%,91% 24%,91% 26%,18% 26%,18% 83%,29% 83%,29% 17%,41% 17%,41% 39%,18% 39%,18% 82%,54% 82%,54% 88%,19% 88%,19% 4%,39% 4%,39% 14%,76% 14%,76% 52%,23% 52%,23% 35%,19% 35%,19% 8%,36% 8%,36% 31%,73% 31%,73% 16%,1% 16%,1% 56%,50% 56%,50% 8%)}5%{clip-path:polygon(0% 29%,44% 29%,44% 83%,94% 83%,94% 56%,11% 56%,11% 64%,94% 64%,94% 70%,88% 70%,88% 32%,18% 32%,18% 96%,10% 96%,10% 62%,9% 62%,9% 84%,68% 84%,68% 50%,52% 50%,52% 55%,35% 55%,35% 87%,25% 87%,25% 39%,15% 39%,15% 88%,52% 88%)}30%{clip-path:polygon(0% 53%,93% 53%,93% 62%,68% 62%,68% 37%,97% 37%,97% 89%,13% 89%,13% 45%,51% 45%,51% 88%,17% 88%,17% 54%,81% 54%,81% 75%,79% 75%,79% 76%,38% 76%,38% 28%,61% 28%,61% 12%,55% 12%,55% 62%,68% 62%,68% 51%,0% 51%,0% 92%,63% 92%,63% 4%,65% 4%)}45%{clip-path:polygon(0% 33%,2% 33%,2% 69%,58% 69%,58% 94%,55% 94%,55% 25%,33% 25%,33% 85%,16% 85%,16% 19%,5% 19%,5% 20%,79% 20%,79% 96%,93% 96%,93% 50%,5% 50%,5% 74%,55% 74%,55% 57%,96% 57%,96% 59%,87% 59%,87% 65%,82% 65%,82% 39%,63% 39%,63% 92%,4% 92%,4% 36%,24% 36%,24% 70%,1% 70%,1% 43%,15% 43%,15% 28%,23% 28%,23% 71%,90% 71%,90% 86%,97% 86%,97% 1%,60% 1%,60% 67%,71% 67%,71% 91%,17% 91%,17% 14%,39% 14%,39% 30%,58% 30%,58% 11%,52% 11%,52% 83%,68% 83%)}76%{clip-path:polygon(0% 26%,15% 26%,15% 73%,72% 73%,72% 70%,77% 70%,77% 75%,8% 75%,8% 42%,4% 42%,4% 61%,17% 61%,17% 12%,26% 12%,26% 63%,73% 63%,73% 43%,90% 43%,90% 67%,50% 67%,50% 41%,42% 41%,42% 46%,50% 46%,50% 84%,96% 84%,96% 78%,49% 78%,49% 25%,63% 25%,63% 14%)}90%{clip-path:polygon(0% 41%,13% 41%,13% 6%,87% 6%,87% 93%,10% 93%,10% 13%,89% 13%,89% 6%,3% 6%,3% 8%,16% 8%,16% 79%,0% 79%,0% 99%,92% 99%,92% 90%,5% 90%,5% 60%,0% 60%,0% 48%,89% 48%,89% 13%,80% 13%,80% 43%,95% 43%,95% 19%,80% 19%,80% 85%,38% 85%,38% 62%)}1%,33%,47%,7%,78%,93%{clip-path:none}}.movement{position:relative;animation:movement 8s step-end infinite}@keyframes movement{0%{top:0;left:-20px}15%{top:10px;left:10px}60%{top:5px;left:-10px}75%{top:-5px;left:20px}100%{top:10px;left:5px}}.opacity{animation:opacity 5s step-end infinite}@keyframes opacity{0%{opacity:.1}5%{opacity:.7}30%{opacity:.4}45%{opacity:.6}76%{opacity:.4}90%{opacity:.8}1%,33%,47%,7%,78%,93%{opacity:0}}
+.pre-sign{
+  color: rgb(0, 255, 136);
+  background-color: rgba(0, 0, 0, 0.664);
+  padding: 2rem; 
+  width: max-content; 
+  font-family: 'ink-free'; 
+  font-size: 1.2rem; 
+  text-indent: .5rem;
+  margin-top: 0rem;
+  border-radius: 15px;
 }
