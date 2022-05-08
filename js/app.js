@@ -6,6 +6,19 @@ let walletclient
 
 window.onload = function() {
   const wallets = ["nami", "eternl"];
+  var namiconnected = localStorage.getItem(namiconnected);
+  var someVarName = localStorage.getItem("someVarKey");
+  // if (namiconnected != null){
+  //   console.log(namiconnected)
+  // };
+  if (someVarName == 'nami') {
+    console.log(someVarName);
+    connectNami();
+  }
+  if (someVarName == 'eternl') {
+    console.log(someVarName);
+    connectNami();
+  };
   for (const wallet of wallets) {
     if (window.cardano[wallet]?.isEnabled()) {
       console.log(`${wallet} wallet is enabled`);
@@ -13,6 +26,8 @@ window.onload = function() {
       console.log(`${wallet} wallet is not enabled`);
     };
   };
+
+  
 };
 
 window.connectNami = async () => {
@@ -40,6 +55,8 @@ async function connectNami() {
           const walletstring = `${address.substring(0, 5)}***${address.substring(address.length - 5)}`;
           console.log(address);
           document.getElementById('wallet').innerText = walletstring;
+          var someVarName = "nami";
+          localStorage.setItem("someVarKey", someVarName);
         }
         else {
           window.alert("You're on testnet");
@@ -64,6 +81,8 @@ async function connectEternl(){
           const walletstring = `${address.substring(0, 5)}***${address.substring(address.length - 5)}`;
           console.log(address);
           document.getElementById('wallet').innerText = walletstring;
+          var someVarName = "eternl";
+          localStorage.setItem("someVarKey", someVarName);
         }
         else {
           window.alert("You're on testnet");
