@@ -8,9 +8,6 @@ window.onload = function() {
   const wallets = ["nami", "eternl"];
   var namiconnected = localStorage.getItem(namiconnected);
   var someVarName = localStorage.getItem("someVarKey");
-  // if (namiconnected != null){
-  //   console.log(namiconnected)
-  // };
   if (someVarName == 'nami') {
     console.log(someVarName);
     connectNami();
@@ -37,6 +34,7 @@ window.connectNami = async () => {
 window.connectEternl = async () => {
   await connectEternl();
 }
+var img = document.createElement("img");
 
 async function connectNami() {
   
@@ -45,16 +43,18 @@ async function connectNami() {
       walletclient = await window.cardano.nami.enable();
       if (walletclient) {
         const walletid = (await walletclient.getNetworkId());
-       
-        
+        img.src = "/img/icon/nami.svg"
+        img.style.cssText = 'width: 30px;margin-left:0rem;'
         if (walletid == 1){
           console.log(walletclient);
           const addressHex = (await walletclient.getUsedAddresses())[0];
-          // const icon = (await window.cardano.nami.icon); //need icons
           const address = S.Address.from_bytes(Buffer.from(addressHex, "hex")).to_bech32();
           const walletstring = `${address.substring(0, 5)}***${address.substring(address.length - 5)}`;
           console.log(address);
           document.getElementById('wallet').innerText = walletstring;
+          var logoWallet = document.getElementById('wallet-icon-selected');
+          logoWallet.appendChild(img);
+          //onload autoconnect
           var someVarName = "nami";
           localStorage.setItem("someVarKey", someVarName);
         }
@@ -74,13 +74,20 @@ async function connectEternl(){
       walletclient = await window.cardano.eternl.enable();
       if (walletclient) {
         const walletid = (await walletclient.getNetworkId());
+        //insert logo on connection
+        img.src = "/img/icon/eternl.png"
+        img.style.cssText = 'width: 30px;margin-left:0rem;'
         if (walletid == 1){
           console.log(walletclient);
           const addressHex = (await walletclient.getUsedAddresses())[0];
           const address = S.Address.from_bytes(Buffer.from(addressHex, "hex")).to_bech32();
           const walletstring = `${address.substring(0, 5)}***${address.substring(address.length - 5)}`;
           console.log(address);
+           document.getElementById('wallet').innerText = walletstring;
+           var logoWallet = document.getElementById('wallet-icon-selected');
+           logoWallet.appendChild(img);
           document.getElementById('wallet').innerText = walletstring;
+          //onload autoconnect
           var someVarName = "eternl";
           localStorage.setItem("someVarKey", someVarName);
         }
