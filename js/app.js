@@ -8,13 +8,13 @@ window.onload = function() {
   const wallets = ["nami", "eternl"];
   var namiconnected = localStorage.getItem(namiconnected);
   var someVarName = localStorage.getItem("someVarKey");
-  if (someVarName == 'nami') {
+  if (someVarName === 'nami') {
     console.log(someVarName);
     connectNami();
   }
-  if (someVarName == 'eternl') {
+  if (someVarName === 'eternl') {
     console.log(someVarName);
-    connectNami();
+    connectEternl();
   };
   for (const wallet of wallets) {
     if (window.cardano[wallet]?.isEnabled()) {
@@ -36,8 +36,8 @@ window.connectEternl = async () => {
 }
 var img = document.createElement("img");
 
+
 async function connectNami() {
-  
   if (window.cardano.nami) {
     try {
       walletclient = await window.cardano.nami.enable();

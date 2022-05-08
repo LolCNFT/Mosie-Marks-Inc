@@ -238,6 +238,7 @@ html, body { overflow-x: hidden;
   color: #fff;
   text-align: center;
   font-family: 'fh-ink';
+  margin-top: 8rem;
 }
 .content h2{
   font-size: 3rem;
@@ -295,6 +296,7 @@ html, body { overflow-x: hidden;
 	border-radius: 5rem;
 	width: 90%;
 	box-shadow: 12px 10px 8px 0px #000000;
+  z-index: 2;
 
 /* 
 	margin-left: 50%;
@@ -334,6 +336,7 @@ html, body { overflow-x: hidden;
 	align-items: center;
 	overflow: hidden;
 	position: relative;
+  z-index: 2;
   }
   @media only screen and (max-width: 650px) {
 	.slider .box {
@@ -607,21 +610,44 @@ html, body { overflow-x: hidden;
   align-items: center;
 }
 .moving-image{
-  position: relative ;
+  position: fixed ;
   z-index: 1;
-  left: -900px;
-  bottom: -450px;
+  left: 2000px;
+  bottom: 300px;
   animation: fish 60s linear infinite;
+}
+.moving-image-2{
+  position: fixed ;
+  z-index: 1;
+  left: 3000px;
+  bottom: 700px;
+  animation: fish2 60s linear infinite;
+  animation-delay: 20s;
 }
 @keyframes fish {
   0% {
-    transform: translate(-1000px,-50px) rotatez(0deg);
+    transform: translate(7000px,300px) rotatez(0deg);
     -moz-transform: translate(-1000px,-50px) rotatez(0deg);
     -ms-transform: translate(-1000px,-50px) rotatez(0deg);
     -o-transform: translate(-1000px,-50px) rotatez(0deg);
   }
   100% {
-    transform: translate(4000px,-150px) rotatez(0deg);
+    transform: translate(-7000px,250px) rotatez(0deg);
+    -moz-transform: translate(4000px,-150px) rotatez(0deg);
+    -ms-transform: translate(4000px,-150px) rotatez(0deg);
+    -o-transform: translate(4000px,-150px) rotatez(0deg);
+  }
+    
+}
+@keyframes fish2 {
+  0% {
+    transform: translate(7000px,700px) rotatez(0deg);
+    -moz-transform: translate(-1000px,-50px) rotatez(0deg);
+    -ms-transform: translate(-1000px,-50px) rotatez(0deg);
+    -o-transform: translate(-1000px,-50px) rotatez(0deg);
+  }
+  100% {
+    transform: translate(-7000px,600px) rotatez(0deg);
     -moz-transform: translate(4000px,-150px) rotatez(0deg);
     -ms-transform: translate(4000px,-150px) rotatez(0deg);
     -o-transform: translate(4000px,-150px) rotatez(0deg);
@@ -629,9 +655,9 @@ html, body { overflow-x: hidden;
     
 }
 .team{
-
+  z-index: 2;
   padding: 2rem;
-  margin-top: -8rem;
+  margin-top: 0rem;
   background-color: #00000000;
   border-radius: 10%;
   display: grid; 
