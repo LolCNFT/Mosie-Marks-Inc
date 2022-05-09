@@ -627,30 +627,30 @@ html, body { overflow-x: hidden;
 @keyframes fish {
   0% {
     transform: translate(7000px,300px) rotatez(0deg);
-    -moz-transform: translate(-1000px,-50px) rotatez(0deg);
-    -ms-transform: translate(-1000px,-50px) rotatez(0deg);
-    -o-transform: translate(-1000px,-50px) rotatez(0deg);
+    -moz-transform: translate(7000px,300px) rotatez(0deg);
+    -ms-transform: translate(7000px,300px) rotatez(0deg);
+    -o-transform: translate(7000px,300px) rotatez(0deg);
   }
   100% {
     transform: translate(-7000px,250px) rotatez(0deg);
-    -moz-transform: translate(4000px,-150px) rotatez(0deg);
-    -ms-transform: translate(4000px,-150px) rotatez(0deg);
-    -o-transform: translate(4000px,-150px) rotatez(0deg);
+    -moz-transform: translate(-7000px,250px) rotatez(0deg);
+    -ms-transform: translate(-7000px,250px) rotatez(0deg);
+    -o-transform: translate(-7000px,250px) rotatez(0deg);
   }
     
 }
 @keyframes fish2 {
   0% {
     transform: translate(7000px,700px) rotatez(0deg);
-    -moz-transform: translate(-1000px,-50px) rotatez(0deg);
-    -ms-transform: translate(-1000px,-50px) rotatez(0deg);
-    -o-transform: translate(-1000px,-50px) rotatez(0deg);
+    -moz-transform: translate(7000px,700px) rotatez(0deg);
+    -ms-transform: translate(7000px,700px) rotatez(0deg);
+    -o-transform: translate(7000px,700px) rotatez(0deg);
   }
   100% {
     transform: translate(-7000px,600px) rotatez(0deg);
-    -moz-transform: translate(4000px,-150px) rotatez(0deg);
-    -ms-transform: translate(4000px,-150px) rotatez(0deg);
-    -o-transform: translate(4000px,-150px) rotatez(0deg);
+    -moz-transform: translate(-7000px,600px) rotatez(0deg);
+    -ms-transform: translate(-7000px,600px) rotatez(0deg);
+    -o-transform: translate(-7000px,600px) rotatez(0deg);
   }
     
 }
